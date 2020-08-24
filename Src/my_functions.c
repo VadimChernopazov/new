@@ -145,12 +145,11 @@ char* pointer=0;
 	
 UART_Printf("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\"\r") ;	
 UART_Printf("AT+SAPBR=3,1,\"APN\",\"internet.tele2.ru\"\r") ;	
-	//AT+SAPBR=4,1 — текущие настройки соединения
 UART_Printf("AT+SAPBR=1,1\r") ;
 	
 UART_Printf("AT+HTTPINIT\r") ;		
 UART_Printf("AT+HTTPPARA=\"CID\",1\r") ;
-		
+// Отправка данных на удаленный сервер.		
 UART_Printf("AT+HTTPPARA=\"URL\",\"freelimelectronic.com/php/sim800l.php?coord=%s&datetime=%s\"\r"\
 							,gps_massage, get_RTC_str());
 //printf("%s%s\r\n",gps_massage,get_RTC_str());	
@@ -177,7 +176,8 @@ if(pointer)
 		return true;
 		}
 	}
-//printf("%.32s\r\n",tmp);	
+	if(strncmp(pointer,"+HTTPACTION: 0,307", 18)==NULL)
+	{printf("Пора оплатить интернет\r\n");}
 return false;
 //__NOP();
 }

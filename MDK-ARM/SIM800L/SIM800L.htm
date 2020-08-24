@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SIM800L\SIM800L.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SIM800L\SIM800L.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Aug 18 23:57:26 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Aug 24 19:04:27 2020
 <BR><P>
 <H3>Maximum Stack Usage =        432 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1021,6 +1021,7 @@ Global Symbols
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_gps_str
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartDefaultTask
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_RTC
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_message
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;foult_handler
 </UL>
 
@@ -1244,7 +1245,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
 </UL>
 
-<P><STRONG><a name="[f9]"></a>send_message</STRONG> (Thumb, 134 bytes, Stack size 56 bytes, my_functions.o(i.send_message))
+<P><STRONG><a name="[f9]"></a>send_message</STRONG> (Thumb, 152 bytes, Stack size 56 bytes, my_functions.o(i.send_message))
 <BR><BR>[Stack]<UL><LI>Max Depth = 400<LI>Call Chain = send_message &rArr; UART_Printf &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive
@@ -1252,6 +1253,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Printf
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sim800l_send
 </UL>
